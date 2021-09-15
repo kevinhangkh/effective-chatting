@@ -1,0 +1,18 @@
+<div>
+    <p>Nav</p>
+    
+    <span *ngIf="user?.uid">Hello {{ currentUser?.username }}</span>
+
+    <ul>
+        <li>
+            <!-- <a *ngIf="!(user|async)?.uid" routerLink="/signup">Sign Up</a> -->
+            <a *ngIf="!user?.uid" routerLink="/signup">Sign Up</a>
+        </li>
+        <li>
+            <a *ngIf="!user?.uid" routerLink="/login">Log In</a>
+        </li>
+        <li>
+            <a *ngIf="user?.uid" href="" (click)="logOut()">Log out</a>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,7 @@
+
+<div>
+    <h3>Chat feed</h3>
+    <div *ngFor="let message of chatMessages">
+        <app-chat-message [chatMessage]="message"></app-chat-message>
+    </div>
+</div>

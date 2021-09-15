@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "chat-app-d291f": {
+      "hosting": {
+        "chat-app": [
+          "chat-app-d291f"
+        ]
+      }
+    }
+  }
+}

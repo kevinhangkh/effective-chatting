@@ -1,0 +1,5 @@
+
+<form #form="ngForm" (ngSubmit)="onSubmit(form)">
+    <input type="text" name="message" [(ngModel)]="message">
+    <button type="submit">Send</button>
+</form>
