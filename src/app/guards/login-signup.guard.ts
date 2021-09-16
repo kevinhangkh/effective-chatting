@@ -6,24 +6,21 @@ import { AuthService } from '../services/auth.service';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthGuard implements CanActivate {
+export class LoginSignupGuard implements CanActivate {
 
-  constructor(private auth: AuthService, private router: Router) {
-  }
+  constructor(private auth: AuthService, private router: Router) {}
 
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
-    // console.log("guard " + this.auth.getUserId());
-    
-    if (this.auth.getUserId())
-      return true;
+      if (this.auth.getUserId()) {
+        console.log("user already logged in!");
+        this.router.navigate(['/chat']);
+        return false;
+      }
 
-    console.log("access denied! log in first!");
-    this.router.navigate(['/login']);
-    return false;
-    
+    return true;
   }
   
 }

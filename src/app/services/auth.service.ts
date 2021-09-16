@@ -22,13 +22,18 @@ export class AuthService {
     private afs: AngularFirestore,
     private router: Router
     ) { 
-      this.user = afAuth.user;
+      // this.user = afAuth.user;
     }
 
     getUserId(): string {
       console.log(this.authState);
+
+      // if (!this.authState) {
+        const uid = sessionStorage.getItem('user');
+
+      // }
       // console.log(this.authState.user.uid);
-      return this.authState ? this.authState.user.uid : '';
+      return this.authState ? this.authState.user.uid : uid;
     }
 
     getUser() {
@@ -36,7 +41,8 @@ export class AuthService {
       // console.log(uid);
       
       // return uid ? this.afs.collection('users').doc(uid).get() : null;
-      return this.user;
+      return this.afAuth.user;
+      // return this.user;
     }
 
     getUserById(uid: string) {
@@ -64,6 +70,7 @@ export class AuthService {
       return this.afAuth.createUserWithEmailAndPassword(email, password)
       .then((user) => {
         this.authState = user;
+        sessionStorage.setItem('user', user.user.uid);
         console.log(user);
         
         
@@ -96,6 +103,7 @@ export class AuthService {
       return this.afAuth.signInWithEmailAndPassword(email, password)
       .then(user => {
         this.authState = user;
+        sessionStorage.setItem('user', user.user.uid);
         // console.log(user);
 
         const status = 'online';
@@ -106,8 +114,12 @@ export class AuthService {
     setUserStatus(status: string) {
 
       console.log('setting status...' + status);
+
+      const uid = this.getUserId();
+      if(!uid)
+        return;
       
-      this.afs.collection<User>('users').doc(this.getUserId()).update({
+      this.afs.collection<User>('users').doc(uid).update({
         status: status
       })
       .then((res) => console.log(res)
@@ -117,6 +129,7 @@ export class AuthService {
     
     logOut() {
       this.setUserStatus('offline');
+      sessionStorage.removeItem('user');
       this.afAuth.signOut();
       this.router.navigate(['login']);
     }

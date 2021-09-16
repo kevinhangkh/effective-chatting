@@ -20,6 +20,7 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from './services/auth.service';
 import { ChatService } from './services/chat.service';
+import { AuthGuard } from './guards/auth.guard';
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import { ChatService } from './services/chat.service';
   ],
   providers: [
     AuthService,
-    ChatService
+    ChatService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })

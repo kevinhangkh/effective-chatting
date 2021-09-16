@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+
+:root {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+
+    --text-primary: #b6b6b6;
+    --text-secondary: #ececec;
+    --btn-primary: #e5383b;
+    --btn-secondary: #ba181b;
+    --bg-primary: #23232e;
+    --bg-secondary: #141418;
+    --transition-speed: 600ms;
+
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    margin-top: 5rem;
+    padding: 1rem;
+}

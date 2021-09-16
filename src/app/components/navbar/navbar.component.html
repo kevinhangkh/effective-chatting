@@ -1,18 +1,18 @@
-<div>
-    <p>Nav</p>
-    
-    <span *ngIf="user?.uid">Hello {{ currentUser?.username }}</span>
+<div class="navbar">
 
-    <ul>
-        <li>
-            <!-- <a *ngIf="!(user|async)?.uid" routerLink="/signup">Sign Up</a> -->
-            <a *ngIf="!user?.uid" routerLink="/signup">Sign Up</a>
+    <div class="logo"><a href="javascript:void(0)"><i class="fas fa-quote-right"></i>Chatbox</a></div>
+    
+    <div class="welcome" *ngIf="user?.uid">Hello {{ currentUser?.username }}!</div>
+
+    <ul class="nav-list">
+        <li class="nav-item" *ngIf="!user?.uid">
+            <a class="nav-link" routerLink="/signup">Sign Up</a>
         </li>
-        <li>
-            <a *ngIf="!user?.uid" routerLink="/login">Log In</a>
+        <li class="nav-item" *ngIf="!user?.uid">
+            <a class="nav-link" routerLink="/login">Log In</a>
         </li>
-        <li>
-            <a *ngIf="user?.uid" href="" (click)="logOut()">Log out</a>
+        <li class="nav-item" *ngIf="user?.uid">
+            <a class="nav-link" href="" (click)="logOut()">Log out</a>
         </li>
     </ul>
 </div>
