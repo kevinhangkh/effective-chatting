@@ -10,8 +10,14 @@
     --btn-secondary: #ba181b;
     --bg-primary: #23232e;
     --bg-secondary: #141418;
-    --transition-speed: 600ms;
+    --bg-third: #161618;
 
+    --green: #38b000;
+    --transition-speed: 600ms;
+    --letter-spacing: 0.2rem;
+    --border-radius: 5px;
+
+    --navbar-height: 5rem;
 }
 
 body {
@@ -20,6 +26,13 @@ body {
 }
 
 main {
-    margin-top: 5rem;
-    padding: 1rem;
+    margin-top: var(--navbar-height);
+    /* padding: 1rem; */
+}
+
+.title {
+    font-weight: 600;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing);
 }

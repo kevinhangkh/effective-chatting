@@ -16,7 +16,7 @@ export class UserListComponent implements OnInit, OnDestroy {
   constructor(private auth: AuthService) { }
 
   ngOnInit(): void {
-    this.subs.push(this.auth.getAllConnectedUsers().subscribe(users => this.connectedUsers = users));
+    this.subs.push(this.auth.getConnectedUsers().subscribe(users => this.connectedUsers = users));
   }
 
   ngOnDestroy(): void {

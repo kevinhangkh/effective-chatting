@@ -1,7 +1,7 @@
 
 .navbar {
     width: 100vw;
-    height: 5rem;
+    height: var(--navbar-height);
     position: fixed;
     top: 0;
 

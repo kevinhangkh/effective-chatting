@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-login-form',
@@ -37,7 +38,9 @@ export class LoginFormComponent implements OnInit {
     const email = form.value.email;
     const password = form.value.password;
     this.auth.logIn(email, password)
-    .then(res => this.router.navigate(['/chat']))
+    .then(res => {
+      this.router.navigate(['/chat']);
+    })
     .catch(err => console.error(err))
   }
 

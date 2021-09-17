@@ -1,0 +1,31 @@
+form {
+    display: flex;
+    flex-direction: row;
+    /* gap: 2rem; */
+    /* justify-content: space-between; */
+}
+
+input {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    flex: 1;
+    /* height: 3rem; */
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
+    border: none;
+    outline: none;
+    padding: 1rem;
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+
+}
+
+button {
+    border: none;
+    font-family: 'Open Sans', sans-serif;
+    /* font-weight: 700; */
+    font-size: 1.3rem;
+    padding: 1rem;
+    /* border-top-right-radius: var(--border-radius); */
+    border-bottom-right-radius: var(--border-radius);
+}

@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnChanges, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import * as firebase from 'firebase'
@@ -27,10 +27,26 @@ export class NavbarComponent implements OnInit, OnDestroy {
     this.subs.push(
       this.auth.getUser().subscribe(user => {
         this.user = user;
-        console.log("nav user " + this.user);
-        this.getCurrentUser();
+        // console.log("nav user " + JSON.stringify(this.user));
+        // this.getCurrentUser();
       })
     );
+
+    // this.subs.push(
+    //   this.auth.getCurrentUser().subscribe(user => {
+        
+    //     // console.log("yyyyyyy",user);
+        
+    //     const cUser: User = {
+    //       email: user[0].payload.val(),
+    //       status: user[1].payload.val(),
+    //       username: user[2].payload.val(),
+    //     }
+    //     // console.log("ttttttttt" + JSON.stringify(cUser));
+    //     this.currentUser = cUser;
+    //   })
+    // );
+    
   }
 
   ngOnDestroy():void {

@@ -2,7 +2,8 @@
 
     <div class="logo"><a href="javascript:void(0)"><i class="fas fa-quote-right"></i>Chatbox</a></div>
     
-    <div class="welcome" *ngIf="user?.uid">Hello {{ currentUser?.username }}!</div>
+    <!-- <div class="welcome" *ngIf="user?.uid">Hello {{ currentUser?.username }}!</div> -->
+    <!-- <div class="welcome" *ngIf="user?.uid">Hello {{ (tempUser|async|json) }}!</div> -->
 
     <ul class="nav-list">
         <li class="nav-item" *ngIf="!user?.uid">
@@ -12,7 +13,7 @@
             <a class="nav-link" routerLink="/login">Log In</a>
         </li>
         <li class="nav-item" *ngIf="user?.uid">
-            <a class="nav-link" href="" (click)="logOut()">Log out</a>
+            <a class="nav-link" (click)="logOut()">Log out</a>
         </li>
     </ul>
 </div>

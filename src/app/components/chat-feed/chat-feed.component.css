@@ -1,0 +1,22 @@
+.chat-feed-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 1rem;
+    background-color: var(--bg-primary);
+    padding: 2rem;
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+}
+
+.title {
+    text-align: end;
+}
+
+.chat-feed-messages {
+    flex: 1;
+    /* padding: 1rem 2rem; */
+    overflow-y: scroll;
+    background-color: var(--bg-secondary);
+}
+

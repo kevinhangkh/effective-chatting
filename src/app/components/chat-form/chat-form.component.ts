@@ -19,8 +19,11 @@ export class ChatFormComponent implements OnInit {
 
   onSubmit(form: NgForm): void {
     console.log(form.value);
-    this.chat.send(form.value.message);
-    form.reset();
+    if (form.value.message) {
+      this.chat.sendMessage(form.value.message);
+      form.reset();
+    }
+    
   }
 
 }

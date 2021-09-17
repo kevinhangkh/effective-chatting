@@ -7,12 +7,13 @@ export const environment = {
   firebaseConfig: {
     apiKey: "AIzaSyAWoZMyQE_D3lfQsFlLCCePJktUXsNayl4",
     authDomain: "chat-app-d291f.firebaseapp.com",
+    databaseURL: "https://chat-app-d291f-default-rtdb.europe-west1.firebasedatabase.app",
     projectId: "chat-app-d291f",
     storageBucket: "chat-app-d291f.appspot.com",
     messagingSenderId: "616406578949",
     appId: "1:616406578949:web:2a527507da514295d8a96c",
     measurementId: "G-27X8MC0B9C"
-  }
+  },
 };
 
 /*

@@ -1,7 +1,11 @@
-<div>
-    <h3>User list</h3>
-    <div *ngFor="let u of connectedUsers">
-        {{ u.username }}
-        {{ u.status }}
-    </div>
+<div class="user-list-container">
+    <span class="title">Connected users</span>
+    <ul class="list">
+        <li class="item" *ngFor="let u of connectedUsers">
+            <i class="fas fa-circle fa-fw"></i>
+            <!-- {{ u.status }} -->
+            {{ u.username }}
+            
+        </li>
+    </ul>
 </div>

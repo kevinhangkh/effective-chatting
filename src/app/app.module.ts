@@ -7,6 +7,7 @@ import { environment } from 'src/environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { ChatFormComponent } from './components/chat-form/chat-form.component';
 import { ChatFeedComponent } from './components/chat-feed/chat-feed.component';
 import { ChatRoomComponent } from './components/chat-room/chat-room.component';
@@ -42,6 +43,7 @@ import { AuthGuard } from './guards/auth.guard';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
     AngularFireAuthModule,
+    AngularFireDatabaseModule,
     FormsModule,
     ReactiveFormsModule
   ],
