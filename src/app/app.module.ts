@@ -22,6 +22,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from './services/auth.service';
 import { ChatService } from './services/chat.service';
 import { AuthGuard } from './guards/auth.guard';
+import { NgDatePipesModule } from 'ngx-pipes';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { AuthGuard } from './guards/auth.guard';
     AngularFireAuthModule,
     AngularFireDatabaseModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgDatePipesModule
   ],
   providers: [
     AuthService,

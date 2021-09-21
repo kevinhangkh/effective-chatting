@@ -22,6 +22,7 @@
     "@angular/router": "~10.1.0",
     "@fortawesome/fontawesome-free": "^5.15.4",
     "firebase": "^8.10.0",
+    "ngx-pipes": "^2.7.5",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"

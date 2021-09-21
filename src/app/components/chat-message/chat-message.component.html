@@ -1,6 +1,6 @@
 <div>
     {{ chatMessage.username }}
-    {{ chatMessage.timestamp }}
+    {{ chatMessage?.timestamp?.toDate() | timeAgo }}
     {{ chatMessage.message}}
     <!-- {{ chatMessage.$key }} -->
 </div>

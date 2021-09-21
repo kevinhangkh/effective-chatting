@@ -1,9 +1,8 @@
 
-<div class="chat-feed-container">
-    <span class="title">Chat feed</span>
-    <div class="chat-feed-messages">
+<!-- <div class="chat-feed-container"> -->
+    <div class="chat-feed-messages" id="scrollable">
         <div *ngFor="let message of chatMessages">
             <app-chat-message [chatMessage]="message"></app-chat-message>
         </div>
     </div>
-</div>
+<!-- </div> -->

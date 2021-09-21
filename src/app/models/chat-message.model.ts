@@ -3,5 +3,5 @@ export interface ChatMessage {
     email: string,
     username: string,
     message: string,
-    timestamp: {}
+    timestamp?: {}
 }

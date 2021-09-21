@@ -18,6 +18,9 @@
     --border-radius: 5px;
 
     --navbar-height: 5rem;
+    --max-height: 80vh;
+    --chatfeed-max-height: calc(var(--max-height) - 8.2rem);
+    /* --chatfeed-max-height: 5rem; */
 }
 
 body {

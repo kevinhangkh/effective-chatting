@@ -5,6 +5,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## External libraries
 
 Font Awesome [https://fontawesome.com/](https://fontawesome.com/)
+NgDatePipesModule
 
 ## Development server
 

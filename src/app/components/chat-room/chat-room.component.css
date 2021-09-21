@@ -1,11 +1,9 @@
 main {
     display: flex;
     flex-direction: row;
-    /* gap: 2rem; */
     align-items: center;
     justify-content: center;
 
-    /* height: 100vmax; */
     height: calc(100vh - var(--navbar-height) - 4rem);
     padding: 2rem;
 
@@ -14,11 +12,9 @@ main {
 }
 
 .chat-room-container {
-    /* padding: 3rem 6rem; */
     display: flex;
     flex-direction: row;
-    gap: 2rem;
-    height: 70vh;
+    height: 80vh;
     width: 60vw;
 }
 
@@ -26,12 +22,7 @@ main {
     position: relative;
     display: flex;
     flex-direction: column;
-    /* justify-content: stretch;
-    align-items: stretch; */
     background-color: var(--bg-third);
-    /* flex-grow: 1; */
-    /* padding: 2rem;
-    padding-right: 0; */
 }
 
 app-user-list {
@@ -44,18 +35,16 @@ app-user-list {
     flex-direction: column;
     background-color: var(--bg-third);
     flex-grow: 5;
-    /* padding: 2rem;
-    padding-left: 0; */
+}
+
+.title {
+    text-align: end;
+    margin-bottom: 1rem;
+    white-space: nowrap;
 }
 
 app-chat-feed {
     display: flex;
     flex: 1;
+    /* max-height: var(--chatfeed-max-height); */
 }
-
-/* app-chat-form {
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
-    justify-content: space-between;
-} */

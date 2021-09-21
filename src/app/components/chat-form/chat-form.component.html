@@ -1,5 +1,8 @@
 
-<form #form="ngForm" (ngSubmit)="onSubmit(form)">
-    <input type="text" name="message" [(ngModel)]="message">
-    <button type="submit"><i class="fas fa-paper-plane fa-fw"></i></button>
+<form [formGroup]="form" (ngSubmit)="onSubmit(form)">
+    <input type="text" formControlName="msg" placeholder="Type a kind message">
+    <button type="submit" [disabled]="form.invalid" [ngClass]="form.valid?'btn-valid':''">
+        <i class="fas fa-paper-plane fa-fw"></i>
+    </button>
+    <!-- <span *ngIf="form.invalid">Not valid</span> -->
 </form>
