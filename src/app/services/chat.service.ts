@@ -70,7 +70,8 @@ export class ChatService {
         email: this.user.email,
         username: this.username,
         message: message,
-        timestamp: firebase.default.firestore.FieldValue.serverTimestamp()
+        timestamp: firebase.default.firestore.FieldValue.serverTimestamp(),
+        uid: this.user.uid
       }
       
       this.afs.collection<ChatMessage>('messages').add(chatMessage)

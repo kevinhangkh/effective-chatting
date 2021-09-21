@@ -1,6 +1,11 @@
-<div>
-    {{ chatMessage.username }}
-    {{ chatMessage?.timestamp?.toDate() | timeAgo }}
-    {{ chatMessage.message}}
+<div class="message" [ngClass]="userId == chatMessage?.uid ? 'user-message' : 'not-user-message'">
+    <div class="message-header">
+        <span class="message-user">{{ chatMessage?.username }}</span>
+        <span class="message-time">{{ chatMessage?.timestamp?.toDate() | timeAgo }}</span>
+    </div>
+    <div class="message-body">
+        {{ chatMessage?.message }}
+    </div>
+    <!-- {{ chatMessage?.uid }} -->
     <!-- {{ chatMessage.$key }} -->
 </div>

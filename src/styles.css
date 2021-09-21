@@ -6,11 +6,13 @@
 
     --text-primary: #b6b6b6;
     --text-secondary: #ececec;
+    --text-third: #0a0a0e;
     --btn-primary: #e5383b;
     --btn-secondary: #ba181b;
     --bg-primary: #23232e;
     --bg-secondary: #141418;
     --bg-third: #161618;
+    --bg-quad: #2e2e3d;
 
     --green: #38b000;
     --transition-speed: 600ms;

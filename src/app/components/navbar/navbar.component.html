@@ -1,6 +1,11 @@
 <div class="navbar">
 
-    <div class="logo"><a href="javascript:void(0)"><i class="fas fa-quote-right"></i>Chatbox</a></div>
+    <div class="logo">
+        <a href="javascript:void(0)" [ngClass]="user?.uid?'online':'offline'">
+            <i class="fas fa-quote-right"></i>
+            Chatbox
+        </a>
+    </div>
     
     <!-- <div class="welcome" *ngIf="user?.uid">Hello {{ currentUser?.username }}!</div> -->
     <!-- <div class="welcome" *ngIf="user?.uid">Hello {{ (tempUser|async|json) }}!</div> -->
