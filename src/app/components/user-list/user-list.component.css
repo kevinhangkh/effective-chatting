@@ -23,9 +23,23 @@
     border-radius: 5px;
     background-color: var(--bg-quad);
     padding-left: 0.4rem;
+
+    transition: var(--transition-speed) ease;
+    transform: translateX(0);
+    box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+}
+
+.item:hover {
+    transform: translateX(.3rem);
 }
 
 .item i {
     color: var(--green);
     font-size: 0.7rem;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+    transition: var(--transition-speed) ease;
+}
+
+.item:hover i {
+    color: var(--greener);
 }

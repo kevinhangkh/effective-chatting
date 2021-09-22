@@ -57,6 +57,7 @@ button i {
     border-bottom: 1px solid var(--bg-primary);
     border-right: 1px solid var(--bg-primary);
     /* transform: scale(.9); */
+    cursor: pointer;
 }
 
 .btn-valid i {

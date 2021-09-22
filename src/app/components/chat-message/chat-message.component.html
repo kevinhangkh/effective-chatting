@@ -1,7 +1,10 @@
 <div class="message" [ngClass]="userId == chatMessage?.uid ? 'user-message' : 'not-user-message'">
-    <div class="message-header">
+    <div class="message-header" [ngClass]="userId == chatMessage?.uid ? 'row-reverse' : ''">
         <span class="message-user">{{ chatMessage?.username }}</span>
-        <span class="message-time">{{ chatMessage?.timestamp?.toDate() | timeAgo }}</span>
+        <div class="message-date">
+            <span class="message-date-tooltip">{{ chatMessage?.timestamp?.toDate() | date : ' d/MM/y h:mm' }}</span>
+            <span class="message-time-ago">{{ chatMessage?.timestamp?.toDate() | timeAgo }}</span>
+        </div>
     </div>
     <div class="message-body">
         {{ chatMessage?.message }}
