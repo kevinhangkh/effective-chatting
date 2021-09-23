@@ -1,0 +1,183 @@
+main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    height: calc(100vh - var(--navbar-height) - 4rem);
+    padding: 2rem;
+
+    color: var(--text-primary);
+    background-color: var(--bg-third);
+}
+
+.signup-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    text-align: end;
+    margin-bottom: 1rem;
+    white-space: nowrap;
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    padding: 3rem;
+
+    background-color: var(--bg-primary);
+    border-radius: var(--border-radius);
+}
+
+.signup-form input {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    flex: 1;
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
+    border: none;
+    border-bottom: 1px solid var(--bg-secondary);
+    outline: none;
+    padding: .5rem;
+    margin-bottom: .5rem;
+    
+    transition: var(--transition-speed);
+}
+
+.signup-form input:focus {
+    border-bottom: 1px solid var(--text-quad);
+}
+
+.signup-form .password-container {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+.signup-form .show-password {
+    position: absolute;
+    right: .5rem;
+    top: 10px;
+    cursor: pointer;
+}
+
+.signup-form .password-tip {
+    font-family: 'Open Sans', sans-serif;
+    font-size: .7rem;
+    color: var(--text-primary);
+}
+
+.signup-form .password-tip .red {
+    color: var(--btn-primary);
+}
+
+.signup-form .agree {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: .5rem;
+    margin-top: 1rem;
+    color: var(--text-primary);
+    font-size: .9rem;
+    cursor: pointer;
+    user-select: none;
+}
+
+.signup-form .agree .checkbox {
+    font-size: 1rem;
+    transition: .1s;
+    transform: scale(1);
+}
+
+.signup-form .agree:active .checkbox {
+    transform: scale(1.1);
+}
+
+.signup-form .agree a {
+    color: var(--text-quad);
+}
+
+.signup-form .agree a:hover {
+    color: var(--text-primary);
+}
+
+.signup-form button {
+    border: none;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing);
+    padding: 1rem;
+    margin-top: 1.5rem;
+    border-radius: var(--border-radius);
+
+    transition: var(--transition-speed), transform .3s;
+    transform: scale(1);
+    overflow: hidden;
+
+    color: var(--text-primary);
+    /* filter: grayscale(100%) opacity(0.7); */
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.signup-form button:disabled {
+    background-color: var(--bg-primary);
+    color: var(--text-quad);
+    border: 1px solid var(--text-quad);
+    /* filter: grayscale(.5) opacity(0.6); */
+}
+
+.signup-form button:enabled {
+    /* background-color: var(--bg-quad);
+    border: 1px solid var(--bg-quad); */
+    background-color: var(--btn-primary);
+    border: 1px solid var(--btn-primary);
+    /* color: var(--btn-primary); */
+    /* border-bottom: 1px solid var(--bg-primary);
+    border-right: 1px solid var(--bg-primary); */
+    /* transform: scale(.9); */
+    
+    filter: grayscale(0) opacity(1);
+    cursor: pointer;
+    
+    text-shadow: 0 5px 5px rgba(0,0,0,0.4);
+    box-shadow: 0 10px 10px rgba(0,0,0,0.3);
+}
+
+.signup-form button:enabled:hover {
+    
+    /* background-color: var(--bg-secondary); */
+    /* border: 1px solid var(--bg-secondary); */
+    /* background-color: var(--btn-secondary);
+    border: 1px solid var(--btn-secondary); */
+    filter: grayscale(0) opacity(1);
+    box-shadow: none;
+    /* background-color: var(--btn-primary); */
+    /* border: 1px solid var(--text-quad); */
+    /* transform: scale(1.05); */
+}
+
+.signup-form button:enabled:active {
+    transform: scale(1.1);
+}
+
+.links {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.links span {
+    font-family: 'Open Sans', sans-serif;
+    font-size: .9rem;
+    color: var(--text-primary);
+}
+
+.links span a {
+    text-decoration: none;
+    color: var(--btn-primary);
+}

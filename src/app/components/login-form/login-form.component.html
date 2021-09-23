@@ -1,8 +1,6 @@
 
 <main>
-    
     <div class="login-container">
-        
         <span class="title">Welcome</span>
         <!-- <div class="logo">
             <i class="fas fa-quote-right"></i>
@@ -10,18 +8,16 @@
         </div> -->
         
         <form class="login-form" [formGroup]="form" (ngSubmit)="logIn(form)">
-            <!-- <div> -->
-                <!-- <label>Email</label> -->
-                <input type="text" formControlName="email" placeholder="Email">
-            <!-- </div> -->
-            <!-- <div> -->
-                <!-- <label>Password</label> -->
-                <input type="password" formControlName="password" placeholder="Password">
-            <!-- </div> -->
-            
+            <input type="text" formControlName="email" placeholder="Email">
+            <div class="password-container">
+                <input [type]="showPwd ? 'text' : 'password'" formControlName="password" placeholder="Password">
+                <i class="show-password far fa-fw" [ngClass]="showPwd ? 'fa-eye' : 'fa-eye-slash'" 
+                (click)="toggleShowPwd()" 
+                *ngIf="!form.get('password').hasError('required')"></i>
+            </div>
             <button type="submit" [disabled]="form.invalid">Log In</button>
         </form>
-
+        
         <div class="links">
             <span>Forgot <a href="javascript:void(0)">username/password?</a></span>
             <span>Don't have an account? <a routerLink="/signup">Sign up</a></span>

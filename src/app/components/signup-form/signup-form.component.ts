@@ -13,6 +13,8 @@ import { PasswordValidators } from 'src/app/validators/password-validator';
 export class SignupFormComponent implements OnInit {
   
   form: FormGroup;
+  showPwd: boolean = false;
+  agreed: boolean = false;
   
   constructor(
     private auth: AuthService,
@@ -34,11 +36,11 @@ export class SignupFormComponent implements OnInit {
         ])],
         password: [null, Validators.compose([
           Validators.required, 
-          // Validators.minLength(8),
-          // PasswordValidators.patternValidator(/\d/, { hasNumber: true }),
-          // PasswordValidators.patternValidator(/[A-Z]/, { hasCapitalCase: true }),
-          // PasswordValidators.patternValidator(/[a-z]/, { hasSmallCase: true }),
-          // PasswordValidators.patternValidator(/[ !@#$%^&*()_+\-=[\]{};':"|,\.<>/?\\]/, { hasSpecialCharacters: true })
+          Validators.minLength(8),
+          PasswordValidators.patternValidator(/\d/, { hasNumber: true }),
+          PasswordValidators.patternValidator(/[A-Z]/, { hasCapitalCase: true }),
+          PasswordValidators.patternValidator(/[a-z]/, { hasSmallCase: true }),
+          PasswordValidators.patternValidator(/[ !@#$%^&*()_+\-=[\]{};':"|,\.<>/?\\]/, { hasSpecialCharacters: true })
         ])],
         username: [null, Validators.compose([
           Validators.required
@@ -57,6 +59,14 @@ export class SignupFormComponent implements OnInit {
       .then(res => this.router.navigate(['/chat']))
       .catch(err => console.error(err)
       );
+    }
+
+    toggleShowPwd(): void {
+      this.showPwd = !this.showPwd;
+    }
+
+    toggleAgree(): void {
+      this.agreed = !this.agreed;
     }
     
     

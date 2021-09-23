@@ -12,6 +12,7 @@ import { NavbarComponent } from '../navbar/navbar.component';
 export class LoginFormComponent implements OnInit {
 
   form: FormGroup;
+  showPwd: boolean = false;
 
   constructor(private fb: FormBuilder, private auth: AuthService, private router: Router) { 
 
@@ -42,6 +43,10 @@ export class LoginFormComponent implements OnInit {
       this.router.navigate(['/chat']);
     })
     .catch(err => console.error(err))
+  }
+
+  toggleShowPwd(): void {
+    this.showPwd = !this.showPwd;
   }
 
 }

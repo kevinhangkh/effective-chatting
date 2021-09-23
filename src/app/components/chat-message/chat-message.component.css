@@ -21,7 +21,7 @@
 }
 
 .user-message:hover {
-    transform: translateX(-.3rem);
+    transform: translateX(-.1rem);
 }
 
 .not-user-message {
@@ -30,7 +30,7 @@
 }
 
 .not-user-message:hover {
-    transform: translateX(.3rem);
+    transform: translateX(.1rem);
 }
 
 .message-header {
@@ -60,20 +60,33 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    
 }
 
 .message-date:hover .message-date-tooltip {
+    visibility: visible;
     opacity: 1;
     display: flex;
-    /* top: -2rem; */
+    -webkit-transition: .5s all;   
+    -webkit-transition-delay: .5s; 
+    -moz-transition: .5s all;   
+    -moz-transition-delay: .5s; 
+    -ms-transition: .5s all;   
+    -ms-transition-delay: .5s; 
+    -o-transition: .5s all;   
+    -o-transition-delay: .5s; 
+    transition: .5s all;   
+    transition-delay: .5s; 
 }
 
 .message-date-tooltip {
+    visibility: hidden;
     opacity: 0;
     white-space: nowrap;
     position: absolute;
     top: -2rem;
-    background-color: white;
+    font-size: .8rem;
+    background-color: var(--text-secondary);
     padding: .3rem;
     border-radius: var(--border-radius);
     box-shadow: 0 10px 10px rgba(0,0,0,0.1);
@@ -84,12 +97,16 @@
     transition: .2s ease;
 }
 
-/* .message-date-tooltip::before {
+.message-date-tooltip::before {
     content: '';
     height: 10px;
     width: 10px;
-    background-color: lightcoral;
-} */
+    background-color: var(--text-secondary);
+    position: absolute;
+    left: 50%;
+    top: 22px;
+    transform: translateX(-50%) rotate(45deg);
+}
 
 .message-time-ago {
     justify-self: end;

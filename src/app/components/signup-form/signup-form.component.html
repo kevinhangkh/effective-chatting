@@ -1,19 +1,36 @@
 <main>
-    <form [formGroup]="form" (ngSubmit)="signUp(form)">
+    <div class="signup-container">
+        <span class="title">New Account</span>
+        <!-- (ngSubmit)="signUp(form)" -->
+        <form class="signup-form" [formGroup]="form" (ngSubmit)="signUp(form)">
+            
+            <input type="text" formControlName="email" placeholder="Email">
+            <input type="text" formControlName="username" placeholder="Username">
+            <div class="password-container">
+                <input [type]="showPwd ? 'text' : 'password'" formControlName="password" placeholder="Password">
+                <i class="show-password far fa-fw" [ngClass]="showPwd ? 'fa-eye' : 'fa-eye-slash'" 
+                (click)="toggleShowPwd()" 
+                *ngIf="!form.get('password').hasError('required')"></i>
+            </div>
+            <span class="password-tip">
+                Use at least 
+                <span [ngClass]="form.get('password').errors?.required || form.get('password').errors?.minlength ? 'red' : ''">8 characters</span>, 
+                <span [ngClass]="form.get('password').errors?.required || form.get('password').errors?.hasSmallCase ? 'red' : ''">one lower case</span>, 
+                <span [ngClass]="form.get('password').errors?.required || form.get('password').errors?.hasCapitalCase ? 'red' : ''">one upper case</span>, 
+                <span [ngClass]="form.get('password').errors?.required || form.get('password').errors?.hasSpecialCharacters ? 'red' : ''">one special character</span> and 
+                <span [ngClass]="form.get('password').errors?.required || form.get('password').errors?.hasNumber ? 'red' : ''">one number</span>
+            </span>
 
-        <div>
-            <label>Email</label>
-            <input type="text" formControlName="email">
+            <span class="agree" (click)="toggleAgree()">
+                <i class="far fa-fw checkbox" [ngClass]="agreed ? 'fa-check-square' : 'fa-square'"></i>
+                Agree to <a href="javascript:void(0)">Terms of Service</a> and <a href="javascript:void(0)">Privacy Policy</a>
+            </span>
+            <!-- [disabled]="form.invalid || !agreed" -->
+            <button type="submit" [disabled]="form.invalid || !agreed">Sign Up</button>
+        </form>
+        
+        <div class="links">
+            <span>Already have an account? <a routerLink="/login">Log in</a></span>
         </div>
-        <div>
-            <label>Username</label>
-            <input type="text" formControlName="username">
-        </div>
-        <div>
-            <label>Password</label>
-            <input type="password" formControlName="password">
-        </div>
-
-        <button type="submit" [disabled]="form.invalid">Sign Up</button>
-    </form>
+    </div>
 </main>

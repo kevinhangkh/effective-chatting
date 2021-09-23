@@ -32,6 +32,19 @@ main {
     border-radius: var(--border-radius);
 }
 
+.login-form .password-container {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+.show-password {
+    position: absolute;
+    right: .5rem;
+    top: 10px;
+    cursor: pointer;
+}
+
 .login-form input {
     font-family: 'Open Sans', sans-serif;
     font-size: 1rem;
@@ -64,10 +77,11 @@ main {
     text-transform: uppercase;
     letter-spacing: var(--letter-spacing);
     padding: 1rem;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
     border-radius: var(--border-radius);
 
-    transition: var(--transition-speed);
+    transition: var(--transition-speed), transform .3s;
+    transform: scale(1);
     overflow: hidden;
 
     color: var(--text-primary);
@@ -79,8 +93,7 @@ main {
 .login-form button:disabled {
     background-color: var(--bg-primary);
     color: var(--text-quad);
-    border: none;
-    /* filter: grayscale(.5) opacity(0.6); */
+    border: 1px solid var(--text-quad);
 }
 
 .login-form button:enabled {
@@ -96,6 +109,7 @@ main {
     filter: grayscale(0) opacity(1);
     cursor: pointer;
     
+    text-shadow: 0 5px 5px rgba(0,0,0,0.4);
     box-shadow: 0 10px 10px rgba(0,0,0,0.3);
 }
 
@@ -103,13 +117,17 @@ main {
     
     /* background-color: var(--bg-secondary); */
     /* border: 1px solid var(--bg-secondary); */
-    background-color: var(--btn-secondary);
-    border: 1px solid var(--btn-secondary);
+    /* background-color: var(--btn-secondary);
+    border: 1px solid var(--btn-secondary); */
     filter: grayscale(0) opacity(1);
     box-shadow: none;
     /* background-color: var(--btn-primary); */
     /* border: 1px solid var(--text-quad); */
     /* transform: scale(1.05); */
+}
+
+.login-form button:enabled:active {
+    transform: scale(1.1);
 }
 
 .links {

@@ -41,6 +41,7 @@ app-user-list {
     text-align: end;
     margin-bottom: 1rem;
     white-space: nowrap;
+    cursor: default;
 }
 
 app-chat-feed {
