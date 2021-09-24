@@ -25,6 +25,11 @@
                 <i class="far fa-fw checkbox" [ngClass]="agreed ? 'fa-check-square' : 'fa-square'"></i>
                 Agree to <a href="javascript:void(0)">Terms of Service</a> and <a href="javascript:void(0)">Privacy Policy</a>
             </span>
+
+            <span class="error" [ngStyle]="errorMessage? {'height': 'auto', 'opacity': '1'} : {'height': '0', 'opacity': '0'}">
+                <i class="fas fa-exclamation-triangle fa-fw"></i>
+                {{ errorMessage }}
+            </span>
             <!-- [disabled]="form.invalid || !agreed" -->
             <button type="submit" [disabled]="form.invalid || !agreed">Sign Up</button>
         </form>

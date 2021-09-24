@@ -21,6 +21,9 @@ export class AuthGuard implements CanActivate {
       return true;
 
     console.log("access denied! log in first!");
+
+    console.log("active route " + this.router.url);
+
     this.router.navigate(['/login']);
     return false;
     

@@ -15,6 +15,7 @@ export class SignupFormComponent implements OnInit {
   form: FormGroup;
   showPwd: boolean = false;
   agreed: boolean = false;
+  errorMessage: string = '';
   
   constructor(
     private auth: AuthService,
@@ -56,8 +57,15 @@ export class SignupFormComponent implements OnInit {
       const password = form.value.password;
 
       this.auth.signUp(email, username, password)
-      .then(res => this.router.navigate(['/chat']))
-      .catch(err => console.error(err)
+      .then(() => {
+        // this.router.navigate(['/chat'])
+      })
+      .catch((err) => {
+        const message = this.auth.getErrorMessage(err?.code);
+        this.errorMessage = message ? message : err?.message;
+        console.error(err);
+        form.reset();
+      }
       );
     }
 

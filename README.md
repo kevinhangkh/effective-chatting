@@ -9,7 +9,6 @@ NgDatePipesModule
 
 ## TODO
 
-Handle login/signup errors
 Distinguish current user in user list
 
 ## Development server

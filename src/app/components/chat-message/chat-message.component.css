@@ -20,18 +20,18 @@
     background-color: var(--bg-third);
 }
 
-.user-message:hover {
+/* .user-message:hover {
     transform: translateX(-.1rem);
-}
+} */
 
 .not-user-message {
     align-self: flex-start;
     background-color: var(--bg-quad);
 }
 
-.not-user-message:hover {
+/* .not-user-message:hover {
     transform: translateX(.1rem);
-}
+} */
 
 .message-header {
     display: flex;

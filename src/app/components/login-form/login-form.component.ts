@@ -13,6 +13,7 @@ export class LoginFormComponent implements OnInit {
 
   form: FormGroup;
   showPwd: boolean = false;
+  errorMessage: string = '';
 
   constructor(private fb: FormBuilder, private auth: AuthService, private router: Router) { 
 
@@ -38,11 +39,21 @@ export class LoginFormComponent implements OnInit {
   logIn(form: FormGroup) {
     const email = form.value.email;
     const password = form.value.password;
+
     this.auth.logIn(email, password)
-    .then(res => {
-      this.router.navigate(['/chat']);
+    .then(() => {
+      // this.router.navigate(['/chat']);
     })
-    .catch(err => console.error(err))
+    .catch(err => {
+      const error = {
+        code: err?.code, 
+        message: err?.message
+      };
+      this.errorMessage = this.auth.getErrorMessage(error.code) ? this.auth.getErrorMessage(error.code) : error.message;
+      console.error(err);
+      form.reset();
+      // this.router.navigate(['/signup']);
+    })
   }
 
   toggleShowPwd(): void {

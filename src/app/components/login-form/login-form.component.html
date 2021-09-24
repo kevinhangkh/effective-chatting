@@ -6,7 +6,7 @@
             <i class="fas fa-quote-right"></i>
             Chatbox
         </div> -->
-        
+
         <form class="login-form" [formGroup]="form" (ngSubmit)="logIn(form)">
             <input type="text" formControlName="email" placeholder="Email">
             <div class="password-container">
@@ -15,6 +15,10 @@
                 (click)="toggleShowPwd()" 
                 *ngIf="!form.get('password').hasError('required')"></i>
             </div>
+            <span class="error" [ngStyle]="errorMessage? {'height': 'auto', 'opacity': '1'} : {'height': '0', 'opacity': '0'}">
+                <i class="fas fa-exclamation-triangle fa-fw"></i>
+                {{ errorMessage }}
+            </span>
             <button type="submit" [disabled]="form.invalid">Log In</button>
         </form>
         

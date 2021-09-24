@@ -17,6 +17,11 @@ export class AuthService {
   isLogged: boolean = false;
   private authState: any = null;
   private user: Observable<firebase.User>;
+
+  private readonly errors = {
+    'auth/user-not-found': 'Incorrect email or password.',
+    'auth/wrong-password': 'Incorrect email or password.'
+  }
   
   constructor(
     private afAuth: AngularFireAuth,
@@ -118,6 +123,9 @@ export class AuthService {
     signUp(email: string, username: string, password: string) {
 
       console.log('signing up...');
+
+      return firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
+      .then(() => {
       
       return this.afAuth.createUserWithEmailAndPassword(email, password)
       .then((user) => {
@@ -128,9 +136,10 @@ export class AuthService {
         
         const status = 'online';
         this.setUserData(email, username, status);
+        this.router.navigate(['/chat']);
       })
-      .catch(err => console.error(err)
-      );
+
+      })
     }
 
     setUserData(email: string, username: string, status: string) {
@@ -166,21 +175,10 @@ export class AuthService {
         const status = 'online';
         // this.setUserStatus(status);
         this.setUserStatusRealTime(status, this.getUserId());
-      });
+        this.router.navigate(['/chat']);
+      })
 
       })
-      .catch(err => console.error(err)
-      );
-
-      // return this.afAuth.signInWithEmailAndPassword(email, password)
-      // .then(user => {
-      //   this.authState = user;
-      //   sessionStorage.setItem('user', user.user.uid);
-      //   // console.log(user);
-
-      //   const status = 'online';
-      //   this.setUserStatus(status);
-      // });
     }
 
     setUserStatusRealTime(status: string, uid: string) {
@@ -228,6 +226,11 @@ export class AuthService {
         this.router.navigate(['login'])
       });
     }
+
+    getErrorMessage(code: string): string {
+      return this.errors[code];
+    }
+
     // getUser() {
     //   return this.user$.pipe(first()).toPromise();
     // }

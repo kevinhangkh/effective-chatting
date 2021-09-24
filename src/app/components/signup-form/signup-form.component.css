@@ -61,12 +61,19 @@ main {
     right: .5rem;
     top: 10px;
     cursor: pointer;
+    transition: .1s;
+    transform: scale(1);
+}
+
+.signup-form .show-password:active {
+    transform: scale(1.1);
 }
 
 .signup-form .password-tip {
     font-family: 'Open Sans', sans-serif;
     font-size: .7rem;
-    color: var(--text-primary);
+    color: var(--text-quad);
+    transition: color var(--transition-speed);
 }
 
 .signup-form .password-tip .red {
@@ -101,6 +108,20 @@ main {
 
 .signup-form .agree a:hover {
     color: var(--text-primary);
+}
+
+.signup-form .error {
+    display: flex;
+    opacity: 0;
+    height: 0;
+    flex-direction: row;
+    gap: .5rem;
+    align-items: baseline;
+    transition: .2s;
+    margin-top: 1rem;
+    font-family: 'Open Sans', sans-serif;
+    font-size: .9rem;
+    color: var(--btn-primary);
 }
 
 .signup-form button {
