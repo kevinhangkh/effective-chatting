@@ -10,6 +10,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Demo
 
+Check out the demo here: [https://chat-app-fawn-ten.vercel.app/](https://chat-app-fawn-ten.vercel.app/)
 
 
 
