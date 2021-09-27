@@ -34,7 +34,7 @@ export class ChatService {
           this.authService.getCurrentUser().subscribe(user => {
 
             const username = user[2].payload.val();
-            console.log('test', user[2].payload.val());
+            // console.log('test', user[2].payload.val());
             this.username = username;
             // console.log("test2 " + this.username);
             
@@ -64,7 +64,7 @@ export class ChatService {
 
     sendMessage(message: string) {
 
-      console.log("username " + this.username);
+      // console.log("username " + this.username);
       
       const chatMessage: ChatMessage = {
         email: this.user.email,
@@ -76,7 +76,7 @@ export class ChatService {
       
       this.afs.collection<ChatMessage>('messages').add(chatMessage)
       .then(res => {
-        console.log(res);
+        // console.log(res);
         this.callScrollOrder();
       })
       // .catch(err => console.error(err))

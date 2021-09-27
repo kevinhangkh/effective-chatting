@@ -32,21 +32,6 @@ export class NavbarComponent implements OnInit, OnDestroy {
       })
     );
 
-    // this.subs.push(
-    //   this.auth.getCurrentUser().subscribe(user => {
-        
-    //     // console.log("yyyyyyy",user);
-        
-    //     const cUser: User = {
-    //       email: user[0].payload.val(),
-    //       status: user[1].payload.val(),
-    //       username: user[2].payload.val(),
-    //     }
-    //     // console.log("ttttttttt" + JSON.stringify(cUser));
-    //     this.currentUser = cUser;
-    //   })
-    // );
-    
   }
 
   ngOnDestroy():void {
@@ -55,10 +40,10 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   getCurrentUser() {
     
-    console.log("uid " + this.user?.uid);
+    // console.log("uid " + this.user?.uid);
     this.subs.push(this.auth.getUserById(this.user?.uid).subscribe(user => {
       const data = user.data();
-      console.log("data " + data);
+      // console.log("data " + data);
       
       if (data) {
       this.currentUser.email = data['email'];

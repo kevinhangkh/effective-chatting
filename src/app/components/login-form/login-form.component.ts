@@ -26,12 +26,7 @@ export class LoginFormComponent implements OnInit {
         Validators.email
       ])],
       password: [null, Validators.compose([
-        Validators.required, 
-        // Validators.minLength(8),
-        // PasswordValidators.patternValidator(/\d/, { hasNumber: true }),
-        // PasswordValidators.patternValidator(/[A-Z]/, { hasCapitalCase: true }),
-        // PasswordValidators.patternValidator(/[a-z]/, { hasSmallCase: true }),
-        // PasswordValidators.patternValidator(/[ !@#$%^&*()_+\-=[\]{};':"|,\.<>/?\\]/, { hasSpecialCharacters: true })
+        Validators.required
       ])]
     })
   }

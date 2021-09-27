@@ -12,11 +12,14 @@ export class UserListComponent implements OnInit, OnDestroy {
 
   subs: Subscription[] = [];
   connectedUsers: User[] = [];
+  currentUid: string = '';
 
   constructor(private auth: AuthService) { }
 
   ngOnInit(): void {
     this.subs.push(this.auth.getConnectedUsers().subscribe(users => this.connectedUsers = users));
+
+    this.currentUid = this.auth.getUserId();
   }
 
   ngOnDestroy(): void {

@@ -19,7 +19,9 @@
     flex-direction: row;
     align-items: center;
     gap: 0.5rem;
-    font-weight: 600;
+    font-size: .9rem;
+    font-weight: 400;
+    color: var(--text-quad);
 
     border-radius: 5px;
     background-color: var(--bg-quad);
@@ -30,6 +32,8 @@
     transition: var(--transition-speed) ease;
     transform: translateX(0);
     box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+
+    cursor: default;
 }
 
 .item:hover {
@@ -45,4 +49,10 @@
 
 .item:hover i {
     color: var(--greener);
+}
+
+.user-item {
+    color: var(--text-primary);
+    /* border: 1px solid var(--green); */
+    font-weight: 600;
 }

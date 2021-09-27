@@ -33,32 +33,21 @@ export class AuthService {
     }
 
     getUserId(): string {
-      console.log("getUserId " + this.authState);
+      // console.log("getUserId " + this.authState);
 
-      // if (!this.authState) {
-        const uid = sessionStorage.getItem('user');
+      const uid = sessionStorage.getItem('user');
 
-      // }
-      // console.log(this.authState.user.uid);
       return this.authState ? this.authState.user.uid : uid;
     }
 
     getUser() {
-      // const uid = this.getUserId();
-      // console.log(uid);
-      
-      // return uid ? this.afs.collection('users').doc(uid).get() : null;
       return this.afAuth.user;
-      // return this.user;
     }
 
     getCurrentUser(): Observable<any> {
-      // const uid = this.user.uid;
       const uid = this.getUserId();
-      // if (!uid)
-      //   return 
 
-      console.log("getCurrentUser " + uid);
+      // console.log("getCurrentUser " + uid);
       
       return this.database.list('users/' + uid).snapshotChanges()
       .pipe(
@@ -182,7 +171,7 @@ export class AuthService {
     }
 
     setUserStatusRealTime(status: string, uid: string) {
-      console.log('setting status...' + status);
+      // console.log('setting status...' + status);
 
       var db = firebase.database();
 
@@ -199,11 +188,9 @@ export class AuthService {
       console.log("uid " + uid);
       
       if(!uid) {
-        console.log("NO UID CANT UPDATE STATUS");
-        
         return;
       }
-      console.log("gonna update soon " + uid + " " + status);
+      // console.log("gonna update soon " + uid + " " + status);
       
       this.afs.collection<User>('users').doc(uid).update({
         status: status
@@ -230,47 +217,5 @@ export class AuthService {
     getErrorMessage(code: string): string {
       return this.errors[code];
     }
-
-    // getUser() {
-    //   return this.user$.pipe(first()).toPromise();
-    // }
-    
-    // async signIn(email: string, password: string, displayName: string): Promise<any> {
-    //   await this.afAuth.signInWithEmailAndPassword(email, password)
-    //   .then(
-    //     res => {
-    //       if (res) {
-    //         this.isLogged = true;
-    //         localStorage.setItem('user',JSON.stringify(res.user));
-    //       }
-    //     }
-    //     ).catch(err => console.log(err));
-    //   }
-      
-    //   async signUp(email: string, password: string, displayName: string): Promise<any> {
-    //     await this.afAuth.createUserWithEmailAndPassword(email, password)
-    //     .then(
-    //       res => {
-    //         if (res) { 
-    //           var uid = res.user.uid;
-    //           this.isLogged = true;
-    //           localStorage.setItem('user',JSON.stringify(res.user));
-    //           this.afs.collection<User>('users').doc<User>(res.user.uid).set({
-    //             uid,
-    //             email,
-    //             displayName
-    //           }).catch(err => console.error(err)
-    //           )
-    //         }
-    //       }
-    //       ).catch(err => console.log(err));
-    //     }
-        
-    //     async logOut() {
-    //       await this.afAuth.signOut();
-    //       localStorage.removeItem('user');
-    //       return this.router.navigate(['/']);
-    //     }
-        
         
       }

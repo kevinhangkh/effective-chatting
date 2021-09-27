@@ -51,7 +51,7 @@ export class SignupFormComponent implements OnInit {
     }
     
     signUp(form: FormGroup): void {
-      console.log(form.value);
+      // console.log(form.value);
       const email = form.value.email;
       const username = form.value.username;
       const password = form.value.password;

@@ -9,11 +9,7 @@ import { ChatService } from 'src/app/services/chat.service';
 })
 export class ChatFormComponent implements OnInit {
 
-  // @ViewChild('divComponent2') divComponent1: ElementRef;
-
-
   form: FormGroup;
-  // message: string = '';
 
   constructor(private chat: ChatService, private fb: FormBuilder) { }
 
@@ -21,9 +17,6 @@ export class ChatFormComponent implements OnInit {
     this.form = this.fb.group({
       msg: [null, [Validators.required]]
     });
-
-    // var scrollToTopBtn = document.getElementById("scroll-to-top");
-    // scrollToTopBtn.addEventListener("click", this.scrollToTop);
   }
 
   onSubmit(form: FormGroup): void {

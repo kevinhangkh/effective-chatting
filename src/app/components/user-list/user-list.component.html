@@ -1,10 +1,8 @@
 <!-- <div class="user-list-container"> -->
     <ul class="list">
-        <li class="item" *ngFor="let u of connectedUsers">
+        <li class="item" *ngFor="let u of connectedUsers" [ngClass]="u?.uid == currentUid ? 'user-item' : ''">
             <i class="fas fa-circle fa-fw"></i>
-            <!-- {{ u.status }} -->
             {{ u.username }}
-            
         </li>
     </ul>
 <!-- </div> -->

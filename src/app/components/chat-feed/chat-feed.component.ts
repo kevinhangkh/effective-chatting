@@ -23,7 +23,7 @@ export class ChatFeedComponent implements OnInit, OnDestroy, AfterViewChecked {
 
     this.subs.push(this.chat.getScrollOrder().subscribe(
       (order) => {
-        console.log(order);
+        // console.log(order);
         this.scrollToBottom();
       }))
   }
