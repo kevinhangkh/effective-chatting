@@ -99,12 +99,13 @@
 
 .message-date-tooltip::before {
     content: '';
-    height: 10px;
-    width: 10px;
+    height: .6rem;
+    width: .6rem;
     background-color: var(--text-secondary);
+    /* background-color: lightcoral; */
     position: absolute;
     left: 50%;
-    top: 22px;
+    top: 80%;
     transform: translateX(-50%) rotate(45deg);
 }
 
@@ -114,6 +115,7 @@
     opacity: 0.7;
     white-space: nowrap;
     /* margin-left: .5rem; */
+    user-select: none;
 }
 
 .message-body {

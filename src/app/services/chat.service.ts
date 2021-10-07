@@ -48,7 +48,7 @@ export class ChatService {
     }
 
     getMessages(): Observable<any>{
-      return this.afs.collection<ChatMessage>('messages', ref => ref.orderBy('timestamp','asc').limitToLast(40))
+      return this.afs.collection<ChatMessage>('messages', ref => ref.orderBy('timestamp','asc').limitToLast(100))
       .snapshotChanges()
       .pipe(map(
         action => {return action.map(
