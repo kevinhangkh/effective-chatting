@@ -27,6 +27,12 @@
     /* --chatfeed-max-height: 5rem; */
 }
 
+@media screen and (max-width: 600px) {
+    :root {
+        font-size: 14px;
+    }
+}
+
 body {
     margin: 0;
     padding: 0;
