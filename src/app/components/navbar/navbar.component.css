@@ -1,8 +1,10 @@
-
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 370px) {
     .navbar .logo a span{
         display: none;
     }
+}
+
+@media screen and (max-width: 600px) {
 
     .logo i {
         font-size: 1.4rem;
