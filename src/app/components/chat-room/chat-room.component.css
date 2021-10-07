@@ -1,3 +1,25 @@
+@media screen and (max-width: 500px) {
+    
+    .chat-room-left {
+        display: none;
+        /* visibility: hidden; */
+    }
+
+    .chat-room-right {
+        flex: 1;
+    }
+}
+
+@media screen and (min-width: 500px) {
+
+    .chat-room-left {
+        display: flex;
+        flex-direction: row;
+        flex-direction: column;
+    }
+
+}
+
 main {
     display: flex;
     flex-direction: row;
@@ -5,7 +27,7 @@ main {
     justify-content: center;
 
     height: calc(100vh - var(--navbar-height) - 4rem);
-    padding: 2rem;
+    padding: 2rem 0;
 
     color: var(--text-primary);
     background-color: var(--bg-third);
@@ -19,9 +41,9 @@ main {
 }
 
 .chat-room-left {
-    position: relative;
+    /* position: relative;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; */
     background-color: var(--bg-third);
 }
 
