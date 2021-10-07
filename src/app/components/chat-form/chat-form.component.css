@@ -4,6 +4,12 @@ form {
     border-top: 1px solid var(--bg-secondary);
 }
 
+@media screen and (max-width: 500px) {
+    input {
+        border-bottom-left-radius: var(--border-radius);
+    }
+}
+
 input {
     font-family: 'Open Sans', sans-serif;
     font-size: 1rem;

@@ -7,6 +7,12 @@
     background: #ffb7b7; /* WebKit/Blink Browsers */
 }
 
+@media screen and (max-width: 500px) {
+    .chat-feed-messages {
+        border-top-left-radius: var(--border-radius);
+    }
+}
+
 .chat-feed-messages {
     flex: 1;
     padding: 1rem;
