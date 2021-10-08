@@ -22,13 +22,9 @@
     background-color: var(--bg-primary);
     border-top-right-radius: var(--border-radius);
 
-    /* display: grid;
-    grid-template-columns: min-content;
-    row-gap: .5rem; */
-
     display: flex;
-    flex-direction: column;
-    /* align-items: flex-start; */
+    /* flex-direction: column; */
+    flex-direction: column-reverse; /* So the browser treats the bottom as the top */
     gap: .5rem;
 }
 

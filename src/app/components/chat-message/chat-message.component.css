@@ -99,20 +99,44 @@
     cursor: pointer;
 }
 
+@media screen and (max-width: 500px) {
+
+    .message-date {
+    }
+
+    .message-date:hover .message-date-tooltip {
+        visibility: visible;
+        opacity: 1;
+        display: flex;
+    }
+}
+
 .message-date:hover .message-date-tooltip {
     visibility: visible;
     opacity: 1;
     display: flex;
-    -webkit-transition: .5s all;   
-    -webkit-transition-delay: .5s; 
-    -moz-transition: .5s all;   
-    -moz-transition-delay: .5s; 
-    -ms-transition: .5s all;   
-    -ms-transition-delay: .5s; 
-    -o-transition: .5s all;   
-    -o-transition-delay: .5s; 
-    transition: .5s all;   
-    transition-delay: .5s; 
+}
+
+@media screen and (min-width: 500px) {
+    .message-date {
+        transition: .2s ease;
+    }
+
+    .message-date:hover .message-date-tooltip {
+        visibility: visible;
+        opacity: 1;
+        display: flex;
+        -webkit-transition: .5s all;   
+        -webkit-transition-delay: .5s; 
+        -moz-transition: .5s all;   
+        -moz-transition-delay: .5s; 
+        -ms-transition: .5s all;   
+        -ms-transition-delay: .5s; 
+        -o-transition: .5s all;   
+        -o-transition-delay: .5s; 
+        transition: .5s all;   
+        transition-delay: .5s; 
+    }
 }
 
 .message-date-tooltip {
@@ -130,7 +154,7 @@
     z-index: 3;
     
     /* transition: .5s cubic-bezier(.68,-.55,.265,1.55); */
-    transition: .2s ease;
+    /* transition: .2s ease; */
 }
 
 .message-date-tooltip::before {
