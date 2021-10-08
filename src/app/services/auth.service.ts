@@ -95,16 +95,31 @@ export class AuthService {
       );
     }
 
-    getAllConnectedUsers(): Observable<any> {
-      return this.afs.collection<User>('users').snapshotChanges()
-      .pipe(
-        map(actions => {
-          return actions.map(item => {
-            return {
-              id: item.payload.doc.id,
-              ...item.payload.doc.data()
-            }
-          }).filter(user => user.status === 'online')
+    // getAllConnectedUsers(): Observable<any> {
+    //   return this.afs.collection<User>('users').snapshotChanges()
+    //   .pipe(
+    //     map(actions => {
+    //       return actions.map(item => {
+    //         return {
+    //           id: item.payload.doc.id,
+    //           ...item.payload.doc.data()
+    //         }
+    //       }).filter(user => user.status === 'online')
+    //     })
+    //   );
+    // }
+
+    getStatusById(id: string): Observable<any> {
+      
+      var db = firebase.database();
+
+      return this.database.list('users').snapshotChanges().pipe(
+        map(users => {
+          
+          return users.filter(u => u.key == id)
+          .map(user => {
+              return user.payload.child('status').val();
+          })
         })
       );
     }

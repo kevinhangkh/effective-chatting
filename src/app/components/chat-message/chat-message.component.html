@@ -1,6 +1,11 @@
 <div class="message" [ngClass]="userId == chatMessage?.uid ? 'user-message' : 'not-user-message'">
     <div class="message-header" [ngClass]="userId == chatMessage?.uid ? 'row-reverse' : ''">
-        <span class="message-user">{{ chatMessage?.username }}</span>
+        <div class="message-user">
+            {{ chatMessage?.username }}
+            <div class="mobile-status" *ngIf="userId != chatMessage?.uid">
+                <i class="fas fa-circle fa-fw" [ngClass]="status == 'online' ? 'online' : 'offline'"></i>
+            </div>
+        </div>
         <div class="message-date">
             <span class="message-date-tooltip">{{ chatMessage?.timestamp?.toDate() | date : ' MM/d/y H:mm' }}</span>
             <span class="message-time-ago">{{ chatMessage?.timestamp?.toDate() | timeAgo }}</span>

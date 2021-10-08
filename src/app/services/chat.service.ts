@@ -15,6 +15,8 @@ import { AngularFireDatabase } from '@angular/fire/database';
 })
 export class ChatService {
 
+  private readonly MAX_LOADED_MESSAGES: number = 100;
+
   user: any;
   username: string;
   chatMessages: AngularFirestoreCollection<ChatMessage[]>;
@@ -48,7 +50,7 @@ export class ChatService {
     }
 
     getMessages(): Observable<any>{
-      return this.afs.collection<ChatMessage>('messages', ref => ref.orderBy('timestamp','asc').limitToLast(100))
+      return this.afs.collection<ChatMessage>('messages', ref => ref.orderBy('timestamp','asc').limitToLast(this.MAX_LOADED_MESSAGES))
       .snapshotChanges()
       .pipe(map(
         action => {return action.map(

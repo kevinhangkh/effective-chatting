@@ -1,17 +1,17 @@
 .message {
-
+    
     display: flex;
     flex-direction: column;
     gap: .6rem;
     padding: .5rem;
-
+    
     border-radius: var(--border-radius);
     color: var(--text-primary);
-
+    
     /* align-self: flex-start; */
     transition: var(--transition-speed) ease;
     transform: translateX(0);
-
+    
     box-shadow: 0 10px 10px rgba(0,0,0,0.1);
 }
 
@@ -47,9 +47,46 @@
 }
 
 .message-user {
+    display: flex;
+    flex-direction: row;
+    gap: .3rem;
+    /* justify-content: baseline;
+    align-self: center; */
+    /* position: relative; */
     font-weight: 700;
     opacity: 0.9;
     /* margin-right: .5rem; */
+}
+
+/* @media screen and (max-width: 500px) {
+    .mobile-status {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-self: center;
+    }
+}
+
+@media screen and (min-width: 500px) {
+    .mobile-status {
+        display: none;
+    }
+} */
+
+.mobile-status {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-self: center;
+    font-size: .5rem;
+}
+
+.online {
+    color: var(--greener);
+}
+
+.offline {
+    color: var(--offline);
 }
 
 .message-date {
@@ -60,7 +97,6 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    
 }
 
 .message-date:hover .message-date-tooltip {
@@ -92,7 +128,7 @@
     box-shadow: 0 10px 10px rgba(0,0,0,0.1);
     color: var(--bg-third);
     z-index: 3;
-
+    
     /* transition: .5s cubic-bezier(.68,-.55,.265,1.55); */
     transition: .2s ease;
 }
