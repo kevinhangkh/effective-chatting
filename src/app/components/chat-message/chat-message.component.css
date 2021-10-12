@@ -1,5 +1,6 @@
 .message {
-    
+    position: relative;
+    z-index: 1;
     display: flex;
     flex-direction: column;
     gap: .6rem;
@@ -108,14 +109,15 @@
         visibility: visible;
         opacity: 1;
         display: flex;
+        z-index: 100;
     }
 }
 
-.message-date:hover .message-date-tooltip {
+/* .message-date:hover .message-date-tooltip {
     visibility: visible;
     opacity: 1;
     display: flex;
-}
+} */
 
 @media screen and (min-width: 500px) {
     .message-date {
@@ -151,13 +153,14 @@
     border-radius: var(--border-radius);
     box-shadow: 0 10px 10px rgba(0,0,0,0.1);
     color: var(--bg-third);
-    z-index: 3;
+    z-index: 100;
     
     /* transition: .5s cubic-bezier(.68,-.55,.265,1.55); */
     /* transition: .2s ease; */
 }
 
 .message-date-tooltip::before {
+    z-index: 100;
     content: '';
     height: .6rem;
     width: .6rem;
