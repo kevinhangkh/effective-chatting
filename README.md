@@ -25,5 +25,7 @@ Once logged in, the user can interact with other users via the instant messaging
 
 Check out the demo here: [https://chat-app-fawn-ten.vercel.app/](https://chat-app-fawn-ten.vercel.app/)
 
+## Todo
 
-
+* [] Manage z-index of date tooltip with flex-direction: reverse-column;
+* [] Reduce font size for mobile devices with vw < 361px 
