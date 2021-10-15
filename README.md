@@ -27,5 +27,5 @@ Check out the demo here: [https://chat-app-fawn-ten.vercel.app/](https://chat-ap
 
 ## Todo
 
-* [] Manage z-index of date tooltip with flex-direction: reverse-column;
-* [] Reduce font size for mobile devices with vw < 361px 
+* [ ] Manage z-index of date tooltip with flex-direction: reverse-column;
+* [ ] Reduce font size for mobile devices with vw < 361px 
