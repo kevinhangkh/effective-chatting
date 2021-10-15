@@ -16,6 +16,13 @@ A new user can create an account with an email, username and password.
 
 Once logged in, the user can interact with other users via the instant messaging feature.
 
+## Backend
+
+For backend I used Google's Firebase:
+* FireAuth for user authentication [https://firebase.google.com/docs/auth](https://firebase.google.com/docs/auth)
+* RealTime Database to store user data [https://firebase.google.com/docs/database](https://firebase.google.com/docs/database)
+* Firestore for message storing [https://firebase.google.com/docs/firestore](https://firebase.google.com/docs/firestore)
+
 ## External libraries
 
 * Font Awesome [https://fontawesome.com/](https://fontawesome.com/)
@@ -29,3 +36,4 @@ Check out the demo here: [https://chat-app-fawn-ten.vercel.app/](https://chat-ap
 
 * [ ] Manage z-index of date tooltip with flex-direction: reverse-column;
 * [ ] Reduce font size for mobile devices with vw < 361px 
+* [ ] README.md add some screenshots, maybe some gifs
